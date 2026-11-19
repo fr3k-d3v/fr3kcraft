@@ -9,7 +9,7 @@ This is a **standalone public guide** for a human or automation agent tasked wit
 | Item | Evidence/status | What it means |
 | --- | --- | --- |
 | Server plan | **PLANNED:** one Paper Java server with Geyser + Floodgate for Java/Bedrock cross-play | Java and Bedrock are intended to share one world |
-| Server deployment | **OBSERVED 2026-11-19:** deployment bundle staged on Contabo; no Minecraft process/container or TCP/UDP listeners found on the planned Minecraft ports in a live, read-only inspection | **BLOCKED:** there is no verified, joinable server yet |
+| Server deployment | **OBSERVED 2026-11-19:** deployment bundle staged on Contabo and no listeners observed on the planned Minecraft ports; full container/process state could not be verified | **BLOCKED:** no verified joinable server; running state remains **UNKNOWN** |
 | EULA | **REQUIRED:** owner must read and explicitly accept the [Minecraft EULA](https://www.minecraft.net/en-us/eula) before any startup | Agent must not accept on behalf of owner without explicit consent |
 | Access | **REQUIRED:** individually approved whitelist entries and a privately supplied, verified server address | Never guess a host, open ports or bypass a whitelist |
 | In-game verification | **UNKNOWN:** no verified successful Java or Bedrock join, world gameplay, backup restore, or cross-play test | Client preparation is **not** proof of multiplayer readiness |
