@@ -13,6 +13,14 @@ This is the free route for the FR3KCRAFT project. The original Paper/Geyser plan
 - **Persistence:** validated, boot-enabled user-service definitions now exist for both the world server and GPU AI bridge, with user lingering enabled. Neither service has replaced the separately launched live process yet, so controlled service handover/reconnection remains unverified. No live player session has been deliberately disrupted for cutover.
 - **GPD:** the freshly installed Omarchy GPD is online on Tailscale, but SSH port 22 refuses connections and it has not yet joined the managed Fleet. Local SSH enablement and access-policy verification are outstanding.
 
+
+## Reliability and authorization checkpoint
+- **Daily live backups are active:** the server uses a SQLite-consistent snapshot script with archive-member SHA-256 verification, and a systemd timer runs it daily. An actual live snapshot of the copied world passed integrity checks.
+- **Read-only monitoring is active:** world process, private UDP listener and local-model bridge are checked on a recurring timer, with timestamped evidence and no automatic destructive response.
+- **Builder safety is being hardened:** a least-privilege version of the scripted builder has passed LuaJIT behavioral regression tests. The running server still has the legacy builder loaded; source installation and a controlled restart are pending authorization. Do **not** treat its old file queue as an authorized AI-build interface.
+- **GPD access is partially configured:** the device appears on the private Tailscale network, but an additional Tailscale SSH identity check is outstanding before remote provisioning. No game client was installed on GPD in this checkpoint.
+- **Server-service handover:** boot-service units are enabled on the game and GPU machines, but the current live processes have not yet been handed over. Connectivity and the ability to boot after a restart are distinct claims.
+
 ## No cloud sign-in
 Luanti does **not** use a global Microsoft/Mojang account. Players pick their own local player nicknames. Servers can permit empty passwords, but clients may still show a local username/registration UI. Empty passwords must only be used on a trusted, tightly access-controlled private server, **never as a public anonymous server**. FR3KCRAFT currently keeps its Joy's Island server on the existing private overlay network with public server-list advertisement disabled.
 
