@@ -2,7 +2,7 @@
 
 **Free multiplayer track (no Microsoft sign-in): [Luanti + VoxeLibre verified multiplayer and AI guide](FREE_MULTIPLAYER.md).**
 
-**Live evidence (21 November 2026):** X1 and Chromebook both joined the *same copied Joy's Island world*. X1 received a real in-game `/ask` response from the GPU model. Original-world backup passed file and database restore-integrity tests. GPD enrolment, managed-service cutover and world-edit interaction tests remain outstanding.
+**Live evidence (21 November 2026):** X1 and Chromebook both joined the *same copied Joy's Island world*. X1 received a real in-game `/ask` response from the GPU model. Cross-machine player chat was observed independently. Original-world backup passed file and database restore-integrity tests. GPD SSH, managed-service cutover and world-edit interaction tests remain outstanding.
 
 ---
 
