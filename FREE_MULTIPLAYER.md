@@ -1,0 +1,33 @@
+# FR3KCRAFT — free, no-Microsoft-account multiplayer
+
+**Evidence checkpoint — 2026-11-21 (AEST)**
+
+This is the free route for the FR3KCRAFT project. The original Paper/Geyser plan targets proprietary Minecraft Java/Bedrock and **requires a purchased game/account**; it remains a separate unlaunched design. The free route uses [Luanti](https://www.luanti.org/) 5.17 and [VoxeLibre](https://github.com/VoxeLibre/VoxeLibre), a Minecraft-inspired open-source survival/building game. **It is not the proprietary Minecraft client and cannot connect directly to Minecraft Java/Bedrock servers.**
+
+## What has actually been verified
+- **Chromebook:** Luanti 5.17.0-2 and VoxeLibre 0.92.4 installed, with a pre-existing creative world named **Joy's Island**. The source world has not been overwritten.
+- **Temporary private multiplayer world:** a separate `fr3kcraft-lobby` world started in Luanti headless server mode. Server output positively identified VoxeLibre and reported a listener on the expected private-tailnet UDP game port. This is *listening*, not yet a verified client login.
+- **AI:** a world-local, advisory-only `/ask` Luanti mod registered successfully at server boot with HTTP capability. An independent private bridge on the GPU workstation returned an actual model-produced cooperative-build suggestion to a request from the Chromebook. That is proof of AI transport/inference, **not yet an in-game /ask test**.
+- **X1:** online but the Luanti package installation job is held for the Fleet operator's separate out-of-band approval.
+- **GPD:** owner reported a fresh Omarchy install; Tailscale/Fleet enrolment has not been observed yet.
+- **Joy's Island cutover:** backup and copying the original world to an isolated multiplayer world are held for explicit operator approval. The temporary world is not the original map.
+- **Players actually joined:** UNKNOWN. Two-player cooperative interaction: UNKNOWN. Game restore drill: UNKNOWN.
+
+## No cloud sign-in
+Luanti does **not** use a global Microsoft/Mojang account. Players pick their own local player nicknames. Servers can permit empty passwords, but clients may still show a local username/registration UI. Empty passwords must only be used on a trusted, tightly access-controlled private server, **never as a public anonymous server**. FR3KCRAFT currently keeps its temporary server on the existing private overlay network with public server-list advertisement disabled.
+
+## Onboarding
+1. Install the official Luanti client (Arch/Omarchy: `sudo pacman -S --needed luanti`; Windows/macOS/Android: use the project's official downloads).
+2. The world game/content is delivered by the server to clients; a separate Java Minecraft license or Prism Launcher is **not** needed.
+3. Obtain the actual approved tailnet host and UDP game port privately from the operator; no public address is distributed in this guide.
+4. Join the private FR3KCRAFT server with a nickname. After an actual join, use `/ask Suggest a bridge design` to test AI advice; the command never changes world blocks.
+5. Report both a real successful join and, independently, an actual AI chat response before marking it operational.
+
+## Security/architecture
+- GPU-hosted LLM is the existing local, abliterated model; its API key is never copied to clients or stored in this public repository.
+- Private bridge binds to a private-tailnet interface, has a source-IP allowlist, bounds/rate-limits requests, and only produces textual advice. It has **no server console or world-edit permission**.
+- `/ask` is advisory only. Future AI builders must have separately reviewed bounded actions, approvals, rollback and independent observation.
+- The original `Joy's Island` files must be backed up before a live game cutover. Keep a checksum and later test restoration.
+- Retain private fleet identifiers, keys, addresses, player IDs, configuration files and logs outside this public repository.
+
+**Truth rule:** successful build ≠ deployment; listening UDP port ≠ player connection; model response ≠ world mutation; running test world ≠ original Joy's Island cutover.
