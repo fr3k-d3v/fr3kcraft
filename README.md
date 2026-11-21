@@ -1,5 +1,9 @@
 # FR3KCRAFT
 
+**Free multiplayer track (no Microsoft sign-in): [Luanti + VoxeLibre operational evidence and joining guide](FREE_MULTIPLAYER.md).** A private temporary server and advisory AI relay have been started; verified real player joins and original-world cutover remain outstanding.
+
+---
+
 **Public Minecraft client and AI-agent onboarding · Java + Bedrock cross-play**
 
 Start here: **[Complete agent setup and joining runbook](AGENT_SETUP.md)**.
